@@ -76,4 +76,32 @@ p{
 .score{
 	margin-top: 5px;
 	letter-spacing: 2px;
+	text-align: center;
+}
+
+.timer{
+	margin-top: 5px;
+	letter-spacing: 2px;
+	text-align: center;
+}
+
+.btn
+{
+	width: 150px;
+	height: 100px;
+	display: inline-block;
+	margin: 3px;
+	border: 4px solid #51c8b2;
+	border-radius: 4px;
+	cursor: pointer;
+	filter: brightness(70%);
+	transition: all .3s ease-in-out;
+	font-family: 'Lobster', sans-serif;
+	font-size: 28px;
+	color: #51c8b2;
+	background-color: black;
+}
+.btn:hover{
+	border: 4px solid #E9B64A;
+	filter: brightness(100%);
 }
