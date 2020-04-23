@@ -4,6 +4,8 @@ var minutes = 0;
 
 var seconds = 0;
 
+var score=0;
+
 function timer()
 	{
         seconds ++;
@@ -44,8 +46,6 @@ function timer()
         if(parsLeft!=0) setTimeout("timer()",1000);
 	}
 
-var cards = ["ciri.png", "ciri.png", "geralt.png", "geralt.png", "jaskier.png", "jaskier.png", "iorweth.png", "iorweth.png", "triss.png", "triss.png", "yen.png", "yen.png"];
-
 function shuffle(tmpArray) {
     var j, x, i;
     for (i = tmpArray.length - 1; i > 0; i--) {
@@ -56,8 +56,8 @@ function shuffle(tmpArray) {
     }
     return tmpArray;
 }
+var cards = ["ciri.png", "ciri.png", "geralt.png", "geralt.png", "jaskier.png", "jaskier.png", "iorweth.png", "iorweth.png", "triss.png", "triss.png", "yen.png", "yen.png"];
 shuffle(cards);
-console.log(cards);
 for(var i =0; i< cards.length; i++){
     $('#target').append('<div id="c'+ i +'" class="card" onclick="revalCard('+i+')"></div>')
 }
@@ -125,7 +125,8 @@ function hideCards(nr1, nr2){
     parsLeft--;
     if(parsLeft==0)
     {
-        $('.board').html('<h1>You Win!<br>Done in '+turnCounter+ ' turns, '+minutes+' minutes and '+ seconds+ ' seconds</h1> <br>  <button type="button" class="btn" onclick="window.location.reload();">Play Again!</button>' );
+        score=Math.round(Math.pow((hour*360+minutes*60+seconds+turnCounter*10),-2) * 10000000);
+        $('.board').html('<h1>You Win!<br>Your score is '+score+'</h1> <br>  <button type="button" class="btn" onclick="window.location.reload();">Play Again!</button>' );
     }
 
     lock=false;
